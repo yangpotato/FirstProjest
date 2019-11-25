@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/second/second",
+    "pages/index/index",
+  
     "pages/logs/logs"
   ],
   "window": {
@@ -18,13 +19,13 @@
       "backgroundColor": "#FFFFFF",
       "list":[
         {
-        "pagePath" : "pages/index/index",
+        "pagePath" : "pages/second/second",
         "iconPath":"images/th.png",
         "selectedIconPath":"images/th.png",
         "text":"首页"
         },
         {
-          "pagePath": "pages/second/second",
+          "pagePath": "pages/index/index",
           "iconPath": "images/th.png",
           "selectedIconPath": "images/th.png",
           "text":"日志"
