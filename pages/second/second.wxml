@@ -7,8 +7,8 @@
   <view class="item_view">
     <image class="icon" src="../../images/th.png"></image>
     <view class="in_view">
-        <text class="item_title">加入的社群{{item}}</text>
-        <text class="item_title">加入的社群{{item}}</text>
+        <text class="item_title">加入的社群加入的社群加入的社群加入的社群加入的社群加入的社群{{item}}</text>
+        <text class="item_title text-24">加入的社群{{item}}</text>
     </view>
     <image class="right-img" src="../../images/black_back.png"/>
   </view>
