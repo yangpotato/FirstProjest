@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/second/second",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Android",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar" : {
+      "color": "#333333",
+      "selectedColor": "#FF0000",
+      "borderStyle": "black",
+      "backgroundColor": "#FFFFFF",
+      "list":[
+        {
+        "pagePath" : "pages/index/index",
+        "iconPath":"images/th.png",
+        "selectedIconPath":"images/th.png",
+        "text":"首页"
+        },
+        {
+          "pagePath": "pages/second/second",
+          "iconPath": "images/th.png",
+          "selectedIconPath": "images/th.png",
+          "text":"日志"
+        }
+      ]
+  }
+}
