@@ -1,9 +1,6 @@
 <!--pages/second/second.wxml-->
-<view class="toolbar">
-<image class="my_img" src="../../images/black_back.png"></image>
-<text class="my_title">加入的社群</text>
-</view>
-<block wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}">
+
+<block wx:for="{{[1,2,3,4,5,6,6,6,6,6,6,6,6,6,6,6]}}" wx:key="{{index}}">
   <view class="item_view">
     <image class="icon" src="../../images/th.png"></image>
     <view class="in_view">

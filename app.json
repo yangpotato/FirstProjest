@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/second/second",
     "pages/index/index",
-  
     "pages/logs/logs"
   ],
   "window": {
@@ -12,24 +12,24 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "tabBar" : {
-      "color": "#333333",
-      "selectedColor": "#FF0000",
-      "borderStyle": "black",
-      "backgroundColor": "#FFFFFF",
-      "list":[
-        {
-        "pagePath" : "pages/second/second",
-        "iconPath":"images/th.png",
-        "selectedIconPath":"images/th.png",
-        "text":"首页"
-        },
-        {
-          "pagePath": "pages/index/index",
-          "iconPath": "images/th.png",
-          "selectedIconPath": "images/th.png",
-          "text":"日志"
-        }
-      ]
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#FF0000",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/th.png",
+        "selectedIconPath": "images/th.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/second/second",
+        "iconPath": "images/th.png",
+        "selectedIconPath": "images/th.png",
+        "text": "日志"
+      }
+    ]
   }
 }
