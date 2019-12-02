@@ -1,0 +1,92 @@
+<!--pages/community/community.wxml-->
+<!-- <text>pages/community/community.wxmlasdasddddddddddasdfsdfsdf</text> -->
+<view class="top_bg">
+    <view class="top_view">
+        <image class="community_icon" src="../../images/place_avatar.png" mode="aspectFit|aspectFill|widthFix"
+            lazy-load="false" />
+        <text class="community_name">海贼王</text>
+        <view class="close_img_view">
+            <image class="close_img" src="../../images/close.png" />
+        </view>
+        <view class="share_view">
+            <image class="img_more" src="../../images/collection.png" mode="aspectFit|aspectFill|widthFix"
+                lazy-load="false" binderror="" bindload="" />
+            <image class="img_more" src="../../images/more.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false"
+                binderror="" bindload="" />
+        </view>
+    </view>
+    <view class="text_three">
+        <text class="three_center">0</text>
+        <text class="three_center">0</text>
+        <text class="three_center">0</text>
+    </view>
+    <view class="text_three_2">
+        <text class="three_center text_24">售出(件）</text>
+        <text class="three_center text_24">成员数</text>
+        <text class="three_center text_24">奖金池(元)</text>
+    </view>
+    <view class="ruler_view">
+        <text class="announcement">公告</text>
+        <text class="text_ruler_value">暂无设置社群公告</text>
+        <text class="text_ruler">社群规则</text>
+    </view>
+</view>
+<view class="view_charge_main">
+    <view class="view_charge">
+        <image class="charge_img" src="../../images/icon_oil.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <view class="text_charge_view">
+            <text class="text_charge">9.5折加油</text>
+            <text class="text_charge text_24">中石油、中石化</text>
+        </view>
+    </view>
+    <view class="view_charge view_charge_right">
+        <image class="charge_img" src="../../images/icon_charge.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <view class="text_charge_view">
+            <text class="text_charge">9.5折充话费</text>
+            <text class="text_charge text_24">移动、联动、电信</text>
+        </view>
+    </view>
+</view>
+<view class="view_shop">
+    <image class="shop_img" src="../../images/icon_shop.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <text class="shop_text">进入商店</text>
+</view>
+<view class="view_dynamic">
+    <text class="text_dynamic">动态</text>
+</view>
+<block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
+    <view class="item-dynamic">
+      <view class="item-dynamic-top">
+        <image class="item-dynamic-name-img" src="../../images/icon_dynamic_msg.png" />
+        <text class="item-dynamic-name-text">旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群</text>
+      </view>
+      <image class="view-line"/>
+      <image class="community-user-icon" src="../../images/place_avatar.png" />
+      <view class="community_text">
+        <text class="community_user_name">哈哈哈</text>
+        <text class="community_time">今天10:03</text>
+      </view>
+      <text class="community_content">这里的景色太美啦，早晨和傍晚的光影变化很微妙很美好，镜头完全比不上眼睛看到的景致~镜头完全比不上眼睛看到的景致~</text>
+      <view class="nine_img">
+        <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="{{index}}">
+          <image class="item_img" mode="aspectFill" src="../../images/th.png"/>
+        </block>
+      </view>
+       <image class="line2"/>
+       <view class="bottom_view">
+         <view class="view_flag">
+           <image class="img_flag" src="../../images/icon_comment.png" />
+           <text class="text_flag">评论</text>
+         </view>
+         <view class="view_flag">
+           <image class="img_flag img_24" src="../../images/icon_unlike.png" />
+           <text class="text_flag">0</text>
+         </view>
+         <view class="view_flag">
+           <image class="img_flag" src="../../images/icon_forward.png" />
+           <text class="text_flag">转发</text>
+         </view>
+       </view>
+       <image class="view_space"/>
+    </view>
+  </block>

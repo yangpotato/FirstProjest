@@ -1,4 +1,8 @@
 /* pages/home.wxss */
+.main{
+  /* 去掉 不知道怎么出现的横向滚动条 */
+  overflow-x: hidden;
+}
 .swiper{
   margin-left: 24rpx;
   margin-right: 24rpx;
@@ -11,19 +15,23 @@
   width: 100%;
   display: flex;
   white-space:nowrap;
-  margin-top: 32rpx;
+  margin-top: 22rpx;
 }
 .swiper-img{
   width: 100%;
   height: 100%;
   border-radius: 20rpx;
 }
+.right{
+  margin-right: 24rpx;
+}
 .community_item_img{
-   height: 144rpx;
+  height: 144rpx;
   width: 144rpx;
   display: flex;
-  /* box-shadow: 12rpx 12rpx 12rpx 12rpx #00000012; */
-  border: 3rpx solid #00000012;
+  margin-top: 10rpx;
+  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(85, 85, 85, 0.3);
+  /* border: 5rpx solid #000000FF; */
   border-radius: 8rpx;
   align-items: center;
   justify-content: center;
@@ -53,4 +61,165 @@ display: none;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 20rpx;
+}
+.item-dynamic{
+  width: 100%;
+  display: inline-block;
+}
+.item-dynamic-top{
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+  /* justify-content: center; */
+  /* align-content: center; */
+}
+.item-dynamic-name-img{
+  width: 28rpx;
+  height: 34rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.item-dynamic-name-text{
+  font-size: 24rpx;
+  height: 34rpx;
+  margin-left: 14rpx;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 628rpx;
+}
+.view-line{
+  width: auto;  
+  height: 2rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  display: block;
+  background: #DCDCDC;
+}
+.img_view{
+  position: sticky;
+  top: 0;
+  height: 290rpx;
+  border: 1px solid red;
+}
+.main #charge_img{
+  /* width: calc(100% - 5rpx); */
+  width: 100%;
+  height: 100%;
+
+
+  /* margin-right: 1rpx; */
+  /* position: sticky;
+  top: 0; */
+}
+.shadow{
+  display: block;
+  height: 10rpx;
+  margin-top: 10rpx;
+  width: 100%;
+  /* margin-top: 10rpx; */
+  background: linear-gradient(#FFFFFF, #F7F7F7);
+  /* background: #ff00ff; */
+}
+.community-user-icon{
+  border-radius: 40rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 38rpx;
+  margin-left: 24rpx;
+}
+.community_text{
+  display: inline-block;
+}
+.community_time{
+  font-size: 20rpx;
+  color: #999999;
+  margin-left: 24rpx;
+  display: block;
+}
+.community_user_name{
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 24rpx;
+}
+.community_content{
+  font-size: 28rpx;
+  color: #333333;
+  margin-left: 128rpx;
+  margin-right: 46rpx;
+  display: block;
+  margin-top: 20rpx;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.nine_img{
+  width: 100%;
+  margin-left: 128rpx;
+  margin-top: 20rpx;
+}
+
+.item_img{
+  width: 192rpx;
+  height: 192rpx;
+  display: inline-block;
+  margin-right: 8rpx;
+  border-radius: 10rpx;
+  /* display: block; */
+  /* margin-bottom: 40rpx; */
+}
+
+.line2{
+  width: auto;
+  height: 1rpx;
+  /* margin-left: 40rpx; */
+  margin-right: 40rpx;
+  display: block;
+  background: #DCDCDC;
+  margin-left: 128rpx;
+  margin-top: 20rpx;
+  /* height: 2rpx; */
+}
+.bottom_view{
+  margin-left: 128rpx;
+  width: auto;
+  height: 96rpx;
+  margin-right: 40rpx;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between;
+}
+.view_flag{
+  display: flex;
+  /* height: 28rpx; */
+}
+.img_flag{
+  width: 28rpx;
+  height: 28rpx;
+}
+.img_24{
+  height: 24rpx;
+}
+.text_flag{
+  height: 100%;
+  display: block;
+  text-align: center;
+  line-height: 100%;
+  color: #666666;
+  font-size: 24rpx;
+  margin-left: 4rpx;
+}
+.view_space{
+  width: 100%;
+  height: 20rpx;
+  background: rgba(0, 0, 0, 0.06);
 }

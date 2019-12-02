@@ -1,9 +1,13 @@
 {
   "pages": [
+    "pages/community/community",
     "pages/home/home",
     "pages/second/second",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/aaa/aaa",
+    "pages/bbb/bbb"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
