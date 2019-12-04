@@ -1,8 +1,12 @@
 /* pages/community/community.wxss */
+@import "../dynamic/dynamic.wxss";
+
+
 .top_bg{
     width: 100%;
     height: 324rpx;
     background: #000000;
+    position: relative;
 }
 .top_view{
     width: 100%;
@@ -71,29 +75,40 @@
     /* margin-top: 0rpx; */
 }
 .ruler_view{
-    display: table;
-    background: #ff0000;
-    /* justify-content: space-between; */
-    margin-top: 50rpx;
-    padding-left: 30rpx;
-    width: calc(100% - 30rpx);
-    height: auto;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20rpx 0 20rpx 30rpx;
 }
 .announcement{
-    width: auto;
+    /* width: auto; */
+    height: auto;
     font-size: 24rpx;
     color: #ffffff;
     background: rgba(204, 166, 115, 1);
     border-radius: 8rpx;
     padding: 2rpx 10rpx 2rpx 10rpx;
-    display: table-cell;
 }
 .text_ruler_value{
     /* width: 100%; */
-    background: #ff00ff;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    flex: 1;
+    /* background: #ff00ff; */
     font-size: 24rpx;
     color: #ffffff;
-    display: table-cell;
+    word-break:break-all; 
+    -ms-text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .text_ruler{
     font-size: 20rpx;
@@ -105,7 +120,7 @@
     border-top-left-radius: 50rpx;
     border-bottom-left-radius: 50rpx;
     text-align: center;
-    display: table-cell;
+    
 }
 .view_charge_main{
     display: flex;
@@ -167,16 +182,54 @@
     color: rgba(60, 60, 60, 1);
 }
 .view_dynamic{
+    width: 100%;
+    height: 76rpx;
+    background: #ffff00;
+    z-index: 2;
+}
+.view_dynamic-fixed{
+    width: 100%;
     height: 76rpx;
     background: #ff0000;
+    position: fixed;
+    top: 0;
 }
+.view_dynamic-placeholder {
+    width: 100%;
+    height: 76rpx;
+    background-color: white;
+  }
 .text_dynamic{
     height: 100%;
+    /* width:100%; */
     line-height: 76rpx;
-    display: block;
     text-align: center;
-    width: 100%;
     /* color: #000000; */
+    display: inline-block;
     color: #000000;
     background: #00ff00;
+    margin: 0rpx 50rpx;
+}
+.text_dynamic.active{color: #4675F9;position: relative;}
+.tab_layout{
+    height: 76rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #F7F7F7; 
+    font-size: 16px; 
+    white-space: nowrap;
+    /* position: fixed; */
+    /* top: 0; 
+    left: 0; 
+    z-index: 99; */
+}
+.viewpager{
+    
+}
+.view_scroll{
+
+}
+.dynamic_template{
+    width: 100%;
 }

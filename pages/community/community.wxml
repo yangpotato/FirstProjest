@@ -1,5 +1,7 @@
 <!--pages/community/community.wxml-->
 <!-- <text>pages/community/community.wxmlasdasddddddddddasdfsdfsdf</text> -->
+<import src ="../dynamic/dynamic.wxml"/>
+
 <view class="top_bg">
     <view class="top_view">
         <image class="community_icon" src="../../images/place_avatar.png" mode="aspectFit|aspectFill|widthFix"
@@ -27,7 +29,7 @@
     </view>
     <view class="ruler_view">
         <text class="announcement">公告</text>
-        <text class="text_ruler_value">暂无设置社群公告</text>
+        <text class="text_ruler_value">暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告</text>
         <text class="text_ruler">社群规则</text>
     </view>
 </view>
@@ -51,42 +53,38 @@
     <image class="shop_img" src="../../images/icon_shop.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
     <text class="shop_text">进入商店</text>
 </view>
-<view class="view_dynamic">
-    <text class="text_dynamic">动态</text>
+
+<view class="view_scroll" bindtap="tabTouch" >
+    <!-- bindtouchstart='touchStart' bindtouchend='touchEnd'
+    bindtouchmove="handletouchmove"> -->
+ <!-- <view class='{{fixed ? "view_dynamic view_dynamic-fixed": "view_dynamic"}}'>
+    <scroll-view class="tab_layout" scroll-x="true" scroll-left="{{scrollLeft}}">
+        <text class="text_dynamic {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==6?'active':''}} " data-current="6" bindtap="swichNav">动态</text>       
+        <text class="text_dynamic {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">动态</text>
+        <text class="text_dynamic {{currentTab==8?'active':''}}" data-current="8" bindtap="swichNav">动态</text>      
+        <text class="text_dynamic {{currentTab==9?'active':''}}" data-current="9" bindtap="swichNav">动态</text>
+    </scroll-view>
+</view> -->
+<view class='{{fixed ? "view_dynamic view_dynamic-fixed": "view_dynamic"}}'>
+    <text class="text_dynamic">sdfsdfsdf</text>
 </view>
-<block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
-    <view class="item-dynamic">
-      <view class="item-dynamic-top">
-        <image class="item-dynamic-name-img" src="../../images/icon_dynamic_msg.png" />
-        <text class="item-dynamic-name-text">旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群</text>
-      </view>
-      <image class="view-line"/>
-      <image class="community-user-icon" src="../../images/place_avatar.png" />
-      <view class="community_text">
-        <text class="community_user_name">哈哈哈</text>
-        <text class="community_time">今天10:03</text>
-      </view>
-      <text class="community_content">这里的景色太美啦，早晨和傍晚的光影变化很微妙很美好，镜头完全比不上眼睛看到的景致~镜头完全比不上眼睛看到的景致~</text>
-      <view class="nine_img">
-        <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="{{index}}">
-          <image class="item_img" mode="aspectFill" src="../../images/th.png"/>
-        </block>
-      </view>
-       <image class="line2"/>
-       <view class="bottom_view">
-         <view class="view_flag">
-           <image class="img_flag" src="../../images/icon_comment.png" />
-           <text class="text_flag">评论</text>
-         </view>
-         <view class="view_flag">
-           <image class="img_flag img_24" src="../../images/icon_unlike.png" />
-           <text class="text_flag">0</text>
-         </view>
-         <view class="view_flag">
-           <image class="img_flag" src="../../images/icon_forward.png" />
-           <text class="text_flag">转发</text>
-         </view>
-       </view>
-       <image class="view_space"/>
-    </view>
-  </block>
+<view hidden='{{!fixed}}' class="view_dynamic view_dynamic-placeholder"></view>
+<!-- <template is="dynamic"/> -->
+<swiper class="viewpager" current="{{currrentTab}}" duration="300" bindchange="switchTab"
+style="height: {{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:key="{{index}}">
+        <view class=".dynamic_template">
+                <template is="dynamic"/>
+        </view>
+            
+    </swiper-item>
+</swiper>
+   
+</view>
+

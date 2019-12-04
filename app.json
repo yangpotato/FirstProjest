@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/community/community",
     "pages/home/home",
-    "pages/second/second",
+    "pages/community/community",
+
+    "pages/bbb/bbb",
     "pages/index/index",
+    "pages/second/second",
     "pages/logs/logs",
     "pages/aaa/aaa",
-    "pages/bbb/bbb"
-
+    "pages/dynamic/dynamic"
   ],
   "window": {
     "backgroundTextStyle": "light",

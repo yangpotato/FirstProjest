@@ -1,21 +1,37 @@
 /**index.wxss**/
-.userinfo {
+.main{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: row; */
+  background-color: #f17834;
+  width: 100%;
+  /* align-items: center; */
+  /* height: auto; */
+}
+.left{
+    white-space:nowrap;
+    margin-left: 10rpx;
+}
+.center{
+  /* width: 100%; */
+  height: 100%;
+margin-left: 10rpx;
+margin-right: 10rpx;
+background: #ff00ff;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.centerText{
+  /* word-break:break-all; */
+    display: block;
+    margin-left: 10rpx;
+margin-right: 10rpx;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.right{
+    white-space:nowrap;
+    margin-right: 10rpx;
 }

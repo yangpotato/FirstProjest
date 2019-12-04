@@ -1,2 +1,5 @@
-<!--pages/bbb/bbb.wxml-->
-<text>pages/bbb/bbb.wxml</text>
+<view class="noti-content">
+    <view class="noti-lab">公告公告公告</view>
+    <view class="noti-text">发布新版本咯发布新版本咯发布新版本咯发布新版本咯，发布新版本咯发布新版本咯！</view>
+    <view class="noti-rule">社群规则</view>
+  </view>

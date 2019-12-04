@@ -1,7 +1,7 @@
 /* pages/home.wxss */
 .main{
   /* 去掉 不知道怎么出现的横向滚动条 */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .swiper{
   margin-left: 24rpx;
@@ -85,6 +85,7 @@ display: none;
   font-size: 24rpx;
   height: 34rpx;
   margin-left: 14rpx;
+  /* padding-bottom: 20rpx; */
   text-align: center;
   display: inline-block;
   overflow: hidden;
@@ -102,8 +103,12 @@ display: none;
   background: #DCDCDC;
 }
 .img_view{
+  box-sizing: border-box;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
+  left: 0;
+  z-index: 999;
   height: 290rpx;
   border: 1px solid red;
 }
