@@ -1,18 +1,55 @@
 // pages/home.js
+//引入代码
+var request = require("../../utils/request.js")
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+      banarList : [],
+      dynamicList : []
   },
+
+  goto_community: function(options){
+    wx.navigateTo({
+      url: '../community/community',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var params = {
+      categoryid : 1
+    }
+    request.requestGet("banner/list", params, this.getBanarSuccess, this.getBanarFailed)
+  
+    var dynamicParams={
+      from : 0,
+      limit : 10,
+      token : "TKCC04289356208651",
+      type : 1
+    }
+    request.requestGet("social/dynamic/list", dynamicParams, this.getDynamicSuccess, null)
+  },
+  getDynamicSuccess: function(data){
+    console.log(data)
+      this.setData({
+        dynamicList : data.data.list
+      })
+  },
+  getBanarSuccess: function(data){
+    console.log(data.data.banner)
+    var that = this;
+    that.setData({
+      banarList : data.data.banner
+    })
 
+  },
+  getBanarFailed: function(data){
+    console.log("失败")
   },
 
   /**

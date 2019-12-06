@@ -2,22 +2,22 @@
 <template name="dynamic">
   <!-- <scroll-view scroll-y="true" class="scroll_y"> -->
     
-    <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
+    <!-- <block wx:for="{{dynamicList}}" wx:key="{{index}}"> -->
         <view class="item-dynamic">
           <view class="item-dynamic-top">
             <image class="item-dynamic-name-img" src="../../images/icon_dynamic_msg.png" />
-            <text class="item-dynamic-name-text">旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群旅行社群</text>
+            <text class="item-dynamic-name-text">{{item.community_name}}</text>
           </view>
           <image class="view-line"/>
-          <image class="community-user-icon" src="../../images/place_avatar.png" />
+          <image class="community-user-icon" src="{{item.headimg}}" />
           <view class="community_text">
-            <text class="community_user_name">哈哈哈</text>
-            <text class="community_time">今天10:03</text>
+            <text class="community_user_name">{{item.nickname}}</text>
+            <text class="community_time">{{item.release_time}}</text>
           </view>
-          <text class="community_content">这里的景色太美啦，早晨和傍晚的光影变化很微妙很美好，镜头完全比不上眼睛看到的景致~镜头完全比不上眼睛看到的景致~</text>
+          <text class="community_content">{{item.dynamic_content}}</text>
           <view class="nine_img">
-            <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="{{index}}">
-              <image class="item_img" mode="aspectFill" src="../../images/th.png"/>
+            <block wx:for="{{item.dynamic_origin_img}}" wx:key="{{index}}">
+              <image class="item_img" mode="aspectFill" src="{{item}}"/>
             </block>
           </view>
            <image class="line2"/>
@@ -28,7 +28,7 @@
              </view>
              <view class="view_flag">
                <image class="img_flag img_24" src="../../images/icon_unlike.png" />
-               <text class="text_flag">0</text>
+               <text class="text_flag">{{item.like_number}}</text>
              </view>
              <view class="view_flag">
                <image class="img_flag" src="../../images/icon_forward.png" />
@@ -37,7 +37,7 @@
            </view>
         </view>
         <image class="view_space"/>
-      </block>
+      <!-- </block> -->
       
   <!-- </scroll-view> -->
 </template>

@@ -25,7 +25,8 @@
     height: 34rpx;
     margin-left: 14rpx;
     /* padding-bottom: 20rpx; */
-    text-align: center;
+    text-align: left;
+
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;

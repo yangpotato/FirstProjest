@@ -1,16 +1,18 @@
 <!--pages/home.wxml-->
+<import src ="../dynamic/dynamic.wxml"/>
+
 <view class="main">
   <swiper class="swiper" indicator-dots="true" autoplay='true' circular="true"
   interval='2000' indicator-color="#FFFFFF" indicator-active-color="#F64343"> 
-    <block wx:for="{{[1,2,3,4,5,6]}}" wx:key="{{index}}">
+    <block wx:for="{{banarList}}" wx:key="{{index}}">
       <swiper-item class="swiper-item">
-        <image class="swiper-img" src="../../images/th.png" mode="aspectFill"></image>
+        <image class="swiper-img" src="{{item.image}}" mode="aspectFill"></image>
       </swiper-item>
     </block>
   </swiper>
   <scroll-view class="scroll" scroll-x="true">
     <block wx:for="{{[1,2,3,5,6,7]}}" wx:key="{{index}}">
-      <view class="{{index == 5?'community_item right':'community_item'}}">
+      <view class="{{index == 5?'community_item right':'community_item'}}" bindtap="goto_community">
         <view class="community_item_img">
           <image class="community-img" src="../../images/th.png" mode="aspectFill"></image>
         </view>
@@ -23,7 +25,10 @@
   </view>
 
   <view class="shadow"></view>
-  <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
+  <block wx:for="{{dynamicList}}" wx:key="{{index}}">
+    <template is="dynamic" data="{{item}}"/>
+  </block>
+  <!-- <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="{{index}}">
     <view class="item-dynamic">
       <view class="item-dynamic-top">
         <image class="item-dynamic-name-img" src="../../images/icon_dynamic_msg.png" />
@@ -58,5 +63,5 @@
        </view>
        <image class="view_space"/>
     </view>
-  </block>
+  </block> -->
 </view>

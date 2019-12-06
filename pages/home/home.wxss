@@ -1,7 +1,8 @@
 /* pages/home.wxss */
+@import "../dynamic/dynamic.wxss";
 .main{
   /* 去掉 不知道怎么出现的横向滚动条 */
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 .swiper{
   margin-left: 24rpx;
@@ -81,19 +82,6 @@ display: none;
   margin-top: auto;
   margin-bottom: auto;
 }
-.item-dynamic-name-text{
-  font-size: 24rpx;
-  height: 34rpx;
-  margin-left: 14rpx;
-  /* padding-bottom: 20rpx; */
-  text-align: center;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 628rpx;
-}
 .view-line{
   width: auto;  
   height: 2rpx;
@@ -103,14 +91,14 @@ display: none;
   background: #DCDCDC;
 }
 .img_view{
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   position: sticky;
-  position: -webkit-sticky;
+  position: -webkit-sticky; */
   top: 0;
   left: 0;
-  z-index: 999;
+  /* z-index: 999; */
   height: 290rpx;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .main #charge_img{
   /* width: calc(100% - 5rpx); */
