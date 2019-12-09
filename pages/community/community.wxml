@@ -4,9 +4,9 @@
 
 <view class="top_bg">
     <view class="top_view">
-        <image class="community_icon" src="../../images/place_avatar.png" mode="aspectFit|aspectFill|widthFix"
+        <image class="community_icon" src="{{communityInfo.avatar}}" mode="aspectFit|aspectFill|widthFix"
             lazy-load="false" />
-        <text class="community_name">海贼王</text>
+        <text class="community_name">{{communityInfo.name}}</text>
         <view class="close_img_view">
             <image class="close_img" src="../../images/close.png" />
         </view>
@@ -18,9 +18,9 @@
         </view>
     </view>
     <view class="text_three">
-        <text class="three_center">0</text>
-        <text class="three_center">0</text>
-        <text class="three_center">0</text>
+        <text class="three_center">{{communityInfo.total_sales_num}}</text>
+        <text class="three_center">{{communityInfo.join_num}}</text>
+        <text class="three_center">{{communityInfo.bonus_pools_num}}</text>
     </view>
     <view class="text_three_2">
         <text class="three_center text_24">售出(件）</text>
@@ -29,7 +29,7 @@
     </view>
     <view class="ruler_view">
         <text class="announcement">公告</text>
-        <text class="text_ruler_value">暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告暂无设置社群公告</text>
+        <text class="text_ruler_value">{{communityInfo.community_intro == '' ? '暂无设置公告' : communityInfo.community_intro}}</text>
         <text class="text_ruler">社群规则</text>
     </view>
 </view>
@@ -54,10 +54,10 @@
     <text class="shop_text">进入商店</text>
 </view>
 
-<view class="view_scroll" bindtap="tabTouch" >
-    <!-- bindtouchstart='touchStart' bindtouchend='touchEnd'
+<!-- <view class="view_scroll" bindtap="tabTouch" 
+    bindtouchstart='touchStart' bindtouchend='touchEnd'
     bindtouchmove="handletouchmove"> -->
- <!-- <view class='{{fixed ? "view_dynamic view_dynamic-fixed": "view_dynamic"}}'>
+ <view class="view_dynamic">
     <scroll-view class="tab_layout" scroll-x="true" scroll-left="{{scrollLeft}}">
         <text class="text_dynamic {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">动态</text>
         <text class="text_dynamic {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">动态</text>
@@ -70,21 +70,22 @@
         <text class="text_dynamic {{currentTab==8?'active':''}}" data-current="8" bindtap="swichNav">动态</text>      
         <text class="text_dynamic {{currentTab==9?'active':''}}" data-current="9" bindtap="swichNav">动态</text>
     </scroll-view>
-</view> -->
-<view class='{{fixed ? "view_dynamic view_dynamic-fixed": "view_dynamic"}}'>
-    <text class="text_dynamic">sdfsdfsdf</text>
 </view>
-<view hidden='{{!fixed}}' class="view_dynamic view_dynamic-placeholder"></view>
+<!-- <view class="view_dynamic">
+    <text class="text_dynamic">sdfsdfsdf</text>
+</view> -->
+<!-- <view hidden='{{!fixed}}' class="view_dynamic view_dynamic-placeholder"></view> -->
 <!-- <template is="dynamic"/> -->
-<swiper class="viewpager" current="{{currrentTab}}" duration="300" bindchange="switchTab"
-style="height: {{winHeight}}rpx">
-    <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:key="{{index}}">
-        <view class=".dynamic_template">
-                <template is="dynamic"/>
+<swiper class="viewpager" current="{{currentTab}}" duration="300" bindchange="switchTab"
+  style="height: {{winHeight}}px">
+    <swiper-item wx:for="{{10}}" wx:key="index" >
+      <view class=".dynamic_template" >
+        <view wx:for="{{dynamicList}}">
+              <template is="dynamic" data="{{item}}"/>
         </view>
-            
+      </view>
     </swiper-item>
 </swiper>
    
-</view>
+<!-- </view> -->
 

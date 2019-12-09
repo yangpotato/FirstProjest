@@ -53,7 +53,7 @@ function requestApi(url, params, method, doSuccess, doFail) {
           // if(data.is_success == '1' || data.issuccess == '1' 
           //     || data.issuccess == 'true' || data.is_success == 'true')
           
-          typeof doSuccess == 'function' && doSuccess(res.data)
+          typeof doSuccess == 'function' && doSuccess(res.data.data)
         }else{
           // console.log(res.data.error)
           wx.showToast({

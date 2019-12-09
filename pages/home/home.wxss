@@ -14,7 +14,7 @@
 }
 .scroll{
   width: 100%;
-  display: flex;
+  display: inline-flex;
   white-space:nowrap;
   margin-top: 22rpx;
 }
@@ -29,13 +29,19 @@
 .community_item_img{
   height: 144rpx;
   width: 144rpx;
-  display: flex;
+  display: inline-flex;
   margin-top: 10rpx;
   box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(85, 85, 85, 0.3);
   /* border: 5rpx solid #000000FF; */
   border-radius: 8rpx;
   align-items: center;
   justify-content: center;
+
+}
+.community_list{
+  display: flex;
+    flex-wrap:nowrap;
+      width: 144rpx;
 }
 .community_item{
   display: inline-block;

@@ -7,12 +7,14 @@ Page({
    */
   data: {
       banarList : [],
-      dynamicList : []
+      dynamicList : [],
+      communityList: []
   },
 
   goto_community: function(options){
+    var index = parseInt(options.currentTarget.dataset.communityid);
     wx.navigateTo({
-      url: '../community/community',
+      url: '../community/community?community_id=' + index
     })
   },
 
@@ -25,28 +27,41 @@ Page({
       categoryid : 1
     }
     request.requestGet("banner/list", params, this.getBanarSuccess, this.getBanarFailed)
+
+    var communityParams = {
+      from : 0,
+      limit : 10,
+      token: "TKCC09547970830828"
+    }
+    request.requestGet("community/list", communityParams, this.getCommunitySuccess, null)
   
     var dynamicParams={
       from : 0,
       limit : 10,
-      token : "TKCC04289356208651",
+      token: "TKCC09547970830828",
       type : 1
     }
     request.requestGet("social/dynamic/list", dynamicParams, this.getDynamicSuccess, null)
   },
+
+  getCommunitySuccess : function(data){
+    this.setData({
+      communityList : data.list
+    })
+  },
+
   getDynamicSuccess: function(data){
     console.log(data)
       this.setData({
-        dynamicList : data.data.list
+        dynamicList : data.list
       })
   },
   getBanarSuccess: function(data){
-    console.log(data.data.banner)
+    console.log(data.banner)
     var that = this;
     that.setData({
-      banarList : data.data.banner
+      banarList : data.banner
     })
-
   },
   getBanarFailed: function(data){
     console.log("失败")

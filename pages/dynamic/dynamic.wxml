@@ -8,19 +8,23 @@
             <image class="item-dynamic-name-img" src="../../images/icon_dynamic_msg.png" />
             <text class="item-dynamic-name-text">{{item.community_name}}</text>
           </view>
-          <image class="view-line"/>
+          <view class="view-line"/>
           <image class="community-user-icon" src="{{item.headimg}}" />
           <view class="community_text">
             <text class="community_user_name">{{item.nickname}}</text>
             <text class="community_time">{{item.release_time}}</text>
           </view>
           <text class="community_content">{{item.dynamic_content}}</text>
-          <view class="nine_img">
-            <block wx:for="{{item.dynamic_origin_img}}" wx:key="{{index}}">
+          <view class="nine_img" hidden="{{item.dynamic_img == null}}">
+            <block wx:for="{{item.dynamic_origin_img}}" wx:key="index">
               <image class="item_img" mode="aspectFill" src="{{item}}"/>
             </block>
           </view>
-           <image class="line2"/>
+          <view class="view_video" hidden="{{item.dynamic_vid == null || item.dynamic_vid.length == 0}}" style="width:{{item.dynamic_vid[0].width > item.dynamic_vid[0].height ? item.dynamic_vid[0].width * 320 / item.dynamic_vid[0].height : 320}}rpx;height:{{item.dynamic_vid[0].width > item.dynamic_vid[0].height ? 320 : item.dynamic_vid[0].height * 320 / item.dynamic_vid[0].width}}rpx">
+          <image class="dynamic_video"  src="{{(item.dynamic_vid == null || item.dynamic_vid.length == 0) ? '' : item.dynamic_vid[0].video + '?x-oss-process=video/snapshot,t_1000,m_fast'}}"/>
+          <image class="img_video" src="../../images/play.png"/>
+          </view>
+           <view class="line2"/>
            <view class="bottom_view">
              <view class="view_flag">
                <image class="img_flag" src="../../images/icon_comment.png" />
@@ -36,7 +40,7 @@
              </view>
            </view>
         </view>
-        <image class="view_space"/>
+        <view class="view_space"/>
       <!-- </block> -->
       
   <!-- </scroll-view> -->
