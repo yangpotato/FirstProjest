@@ -11,7 +11,7 @@
           <view class="view-line"/>
           <image class="community-user-icon" src="{{item.headimg}}" />
           <view class="community_text">
-            <text class="community_user_name">{{item.nickname}}</text>
+            <text class="community_user_name">{{item.nickname}}{{a}}{{b}}</text>
             <text class="community_time">{{item.release_time}}</text>
           </view>
           <text class="community_content">{{item.dynamic_content}}</text>

@@ -1,13 +1,14 @@
 {
   "pages": [
+
     "pages/home/home",
     "pages/community/community",
-
+    "pages/aaa/aaa",
     "pages/bbb/bbb",
     "pages/index/index",
     "pages/second/second",
     "pages/logs/logs",
-    "pages/aaa/aaa",
+
     "pages/dynamic/dynamic"
   ],
   "window": {

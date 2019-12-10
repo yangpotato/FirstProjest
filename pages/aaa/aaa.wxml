@@ -1,2 +1,20 @@
 <!--pages/aaa/aaa.wxml-->
-<text>pages/aaa/aaa.wxml</text>
+<view class="ruler_popup" >
+        <text class="text_ruler">社群规则</text>
+        <image class="close_ruler" src="../../images/close_ruler.png"/>
+        <view class="view_top_90">
+            <text class="text_ruler_flag">本社群子通证数量：</text>
+            <text class="text_ruler_number">0</text>
+        </view>
+        <view class="view_top_90 top_10">
+                <text class="text_ruler_flag">本社群子通证名称：</text>
+                <text class="text_ruler_flag text_ruler_name">暂未设置</text>
+        </view>
+        <text class="view_top_90 text_ruler_flag top_50">本社群子通证获取规则：</text>
+        <view class="three_view">
+            <view class="text_ruler_flag">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
+            <view class="text_ruler_flag top_50">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
+            <view class="text_ruler_flag top_50">推荐他人成为付费会员，每付费一个，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个</view>
+        </view>
+        <view class="text_ruler_other">其他说明：——如果有说明，显示说明的内容。如果没有说明，不显示</view>
+</view>

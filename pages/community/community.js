@@ -2,8 +2,9 @@
 var app = getApp();
 var request = require("../../utils/request.js")
 let startY = 0;
+let rulerPopupHeight =0;
+var showPopupStatus = true;
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -20,7 +21,9 @@ Page({
     fixed: false,
     community_id : -1,
     dynamicList: [],
-    communityInfo : Object
+    communityInfo : Object,
+    rulerPopupHeight : 0,
+    showPopupStatus : true
   },
    // 滚动切换标签样式
   switchTab:function(e){
@@ -94,16 +97,75 @@ Page({
     })
 
     wx.createSelectorQuery().select(".dynamic_template").boundingClientRect(function (res) {
-      console.log("res.height:" + res.height)
+      console.log("dynamic_template.height:" + res.height)
       that.setData({
         winHeight: res.height
       })
     }).exec()
+
+    // wx.createSelectorQuery().select(".ruler_popup").boundingClientRect(function(res){
+    //   console.log("ruler_popup.height:" + res.height)
+    //   that.data.rulerPopupHeight = res.height
+    // }).exec()
+
+    wx.getSystemInfo({
+      success: function (res, rect) {
+        console.log("windowHeight.height:" + res.windowHeight)
+        rulerPopupHeight = res.windowHeight
+      }
+    })
+
   },
   getInfoSuccess : function(data){
     this.setData({
       communityInfo : data
     })
+  },
+
+  // 显示弹窗
+  showRulerPopup : function(e){
+    var animation = wx.createAnimation({
+      duration : 200,
+      timingFunction : "linear",
+      delay: 0
+    })
+    animation.translateY(rulerPopupHeight * 0.9).step()
+    this.setData({
+      animationData : animation.export(),
+      showPopupStatus : false,
+    })
+  
+    setTimeout(function() {
+      animation.translateY(0).step()
+      this.setData({
+        animationData : animation
+      })
+    }.bind(this), 200)
+    
+    wx.createSelectorQuery().select(".ruler_popup").boundingClientRect(function(res){
+      console.log("ruler_popup.height:" + res.top)
+      // rulerPopupHeight = res.height
+    }).exec()
+  },
+  //隐藏弹窗
+  hideRulerPopup : function(e){
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    animation.translateY(rulerPopupHeight * 0.9).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showPopupStatus: true
+      })
+    }.bind(this), 200)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -164,18 +226,17 @@ Page({
     
   },
 
-  onPageScroll: function(e){
-    //console.log(e)
-    this.data.scrollTop = e.scrollTop;
-    console.log("e.scrollTop=" +e.scrollTop)
-    if (e.scrollTop >= this.data.sectionHeaderLocationTop) {
-      this.setData({
-        fixed: true
-      })
-    } else {
-      this.setData({
-        fixed: false
-      })
-    }
-  }
+  // onPageScroll: function(e){
+  //   //console.log(e)
+  //   this.data.scrollTop = e.scrollTop;
+  //   if (e.scrollTop >= this.data.sectionHeaderLocationTop) {
+  //     this.setData({
+  //       fixed: true
+  //     })
+  //   } else {
+  //     this.setData({
+  //       fixed: false
+  //     })
+  //   }
+  // }
 })
