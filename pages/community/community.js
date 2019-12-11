@@ -23,39 +23,41 @@ Page({
     dynamicList: [],
     communityInfo : Object,
     rulerPopupHeight : 0,
-    showPopupStatus : true
+    showPopupStatus : true,
+    tabItemNode: [], //   导航条节点信息
   },
    // 滚动切换标签样式
   switchTab:function(e){
-    this.setData({
-      currentTab:e.detail.current
-    });
-    this.checkCor();
+    let index = e.detail.current;
+    let tabItemNode=this.data.tabItemNode;
+    let left=0;
+    for(let i=2;i<index;i++){
+      left+=tabItemNode[i].width
+    }
+    this.setData({ 
+      currentTab:e.detail.current,
+      scrollLeft:left
+    })
   },
 
   // 点击标题切换当前页时改变样式
   swichNav:function(e){
-    var cur=e.target.dataset.current;
-    if(this.data.currentTaB==cur){return false;}
-    else{
-        this.setData({
-            currentTab:cur
-        })
-    }
-  },
-  //判断当前滚动超过一屏时，设置tab标题滚动条。
-  checkCor:function(){
-    if (this.data.currentTab>4){
-      this.setData({
-        scrollLeft:300
-      })
-    }else{
-      this.setData({
-        scrollLeft:0
-      })
-    }
-  },
+    wx.pageScrollTo({scrollTop: this.data.navbarInitTop});
 
+    let index = e.currentTarget.dataset.index;
+    let tabItemNode = this.data.tabItemNode;
+    let left = 0;
+    for (let i = 2; i < index; i++) {
+      left += tabItemNode[i].width
+    }
+    console.log(left, index, tabItemNode)
+    this.setData({
+      currentTab: index,
+      scrollLeft: left
+    })
+    console.log(index, this.scrollLeft)
+  },
+ 
   tabTouch: function(e){
     // 当用户点击my-swiper组件时，将其置顶
     const top = e.currentTarget.offsetTop
@@ -115,6 +117,16 @@ Page({
       }
     })
 
+    
+    wx.createSelectorQuery().selectAll('.tab_layout .tab_layout_block').boundingClientRect(function (rect) {
+      console.log("tabItemNode" + rect[3].width)
+      that.setData({
+        tabItemNode: rect
+      })
+     
+
+    }).exec();
+
   },
   getInfoSuccess : function(data){
     this.setData({
@@ -140,7 +152,7 @@ Page({
       this.setData({
         animationData : animation
       })
-    }.bind(this), 200)
+    }.bind(this), 0)
     
     wx.createSelectorQuery().select(".ruler_popup").boundingClientRect(function(res){
       console.log("ruler_popup.height:" + res.top)
@@ -165,7 +177,7 @@ Page({
         animationData: animation.export(),
         showPopupStatus: true
       })
-    }.bind(this), 200)
+    }.bind(this), 0)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

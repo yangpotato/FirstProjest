@@ -47,3 +47,21 @@
 
   }
 
+.my_view{
+  width: 100%;
+  height: 300rpx;
+  background: #1490ce;
+  position: relative;
+}
+.haha{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #ff00ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my_text{
+  background: #00ff00;
+}

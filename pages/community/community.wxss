@@ -226,6 +226,9 @@
     left: 0; 
     z-index: 99; */
 }
+.tab_layout_block{
+    display: inline-flex;
+}
 .viewpager{
     
 }
@@ -254,7 +257,8 @@
   border-top-left-radius: 32rpx;
   border-top-right-radius: 32rpx;
   padding-top: 56rpx;
-  max-height: 90%；
+  padding-bottom: 30rpx;
+  height: 500rpx；
 }
 
 .text_ruler_popup_title{

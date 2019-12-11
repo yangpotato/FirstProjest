@@ -55,17 +55,10 @@
 </view>
 <view>
   <view class="view_dynamic">
-      <scroll-view class="tab_layout" scroll-x="true" scroll-left="{{scrollLeft}}">
-          <text class="text_dynamic {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==6?'active':''}} " data-current="6" bindtap="swichNav">动态</text>       
-          <text class="text_dynamic {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">动态</text>
-          <text class="text_dynamic {{currentTab==8?'active':''}}" data-current="8" bindtap="swichNav">动态</text>      
-          <text class="text_dynamic {{currentTab==9?'active':''}}" data-current="9" bindtap="swichNav">动态</text>
+      <scroll-view class="tab_layout" scroll-x="true" scroll-with-animation="true"  scroll-left="{{scrollLeft}}">
+          <view class="tab_layout_block" wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:key="{{index}}" bindtap="swichNav" data-index="{{index}}">
+            <text class="text_dynamic {{currentTab==index?'active':''}}">动态</text>
+          </view>
       </scroll-view>
   </view>
   <swiper class="viewpager" current="{{currentTab}}" duration="300" bindchange="switchTab"
@@ -86,19 +79,19 @@
         <image class="close_ruler" src="../../images/close_ruler.png" bindtap="hideRulerPopup"/>
         <view class="view_top_90">
             <text class="text_ruler_flag">本社群子通证数量：</text>
-            <text class="text_ruler_number">0</text>
+            <text class="text_ruler_number">{{communityInfo.passcard_residue}}</text>
         </view>
         <view class="view_top_90 top_10">
                 <text class="text_ruler_flag">本社群子通证名称：</text>
-                <text class="text_ruler_flag text_ruler_name">暂未设置</text>
+                <text class="text_ruler_flag text_ruler_name">{{communityInfo.passcard_name == null ? '暂未设置' : communityInfo.passcard_name}}</text>
         </view>
         <text class="view_top_90 text_ruler_flag top_50">本社群子通证获取规则：</text>
         <view class="three_view">
-            <view class="text_ruler_flag">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
-            <view class="text_ruler_flag top_50">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
-            <view class="text_ruler_flag top_50">推荐他人成为付费会员，每付费一个，奖励本社群子通证<text class="text_ruler_number">{{1}}</text>个</view>
+            <view class="text_ruler_flag">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{communityInfo.task_set[0] == '' ? 0 : communityInfo.task_set[0]}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
+            <view class="text_ruler_flag top_50">在本社群发布<text class="text_ruler_number">{{1}}</text>次动态，奖励本社群子通证<text class="text_ruler_number">{{communityInfo.task_set[1] == '' ? 0 : communityInfo.task_set[1]}}</text>个 当日上限<text class="text_ruler_number">5</text>次</view>
+            <view class="text_ruler_flag top_50">推荐他人成为付费会员，每付费一个，奖励本社群子通证<text class="text_ruler_number">{{communityInfo.task_set[2] == '' ? 0 : communityInfo.task_set[2]}}</text>个</view>
         </view>
-        <view class="text_ruler_other">其他说明：——如果有说明，显示说明的内容。如果没有说明，不显示</view>
+        <view class="text_ruler_other" hidden="{{communityInfo.other_content == null}}">其他说明：——如果有说明，显示说明的内容。如果没有说明，不显示</view>
 </view>
 
 
